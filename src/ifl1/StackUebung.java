@@ -56,4 +56,21 @@ public class StackUebung {
         return s2;
     }
 
+
+
+    public int getLaenge(Stack<Integer> s){
+        Stack<Integer> copy = new Stack<>();
+        int laenge = 0;
+        while (!s.isEmpty()){
+            copy.push(s.top());
+            s.pop();
+            laenge++;
+        }
+        while (!copy.isEmpty()){
+            s.push(copy.top());
+            copy.pop();
+        }
+        return laenge;
+    }
+
 }
