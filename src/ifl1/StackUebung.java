@@ -37,7 +37,16 @@ public class StackUebung {
     }
 
     public void ausgeben(Stack<Integer> s) {
-
+        Stack <Integer> copyS = new Stack<>();
+        while (!s.isEmpty()){
+            System.out.println(s.top());
+            copyS.push(s.top());
+            s.pop();
+        }
+        while (!copyS.isEmpty()){
+            s.push(copyS.top());
+            copyS.pop();
+        }
     }
 
     public boolean istGleich(Stack<Integer> s1, Stack<Integer> s2) {
